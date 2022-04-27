@@ -1,0 +1,47 @@
+/* лого */
+
+.logo {
+  display: inline-block;
+  padding-top: 16px;
+  padding-bottom: 16px;
+
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 1.17;
+  letter-spacing: 0.03em;
+  color: var(--logo-half-color);
+
+  @media screen and (min-width: 768px) {
+    padding-top: 26px;
+    padding-bottom: 26px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    padding-top: 24px;
+    padding-bottom: 25px;
+
+    font-size: 26px;
+    line-height: 1.19;
+  }
+
+  transition-property: color;
+  @extend %transition;
+
+  &:hover {
+    color: var(--accent-color);
+  }
+  &:focus {
+    color: var(--accent-color);
+  }
+}
+
+.logo--part {
+  color: var(--accent-color);
+}
+
+.logo--footer-view {
+  padding: 0;
+  margin-bottom: 20px;
+  color: var(--accent-font-color);
+} /* лого */

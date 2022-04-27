@@ -1,0 +1,145 @@
+/* Наша команда */
+
+.team {
+  background-color: var(--minor-bg-color);
+}
+
+.team__title {
+  display: block;
+  margin-bottom: 50px;
+
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 1.18;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: var(--title-font-color);
+
+  @media screen and (min-width: 1200px) {
+    font-size: 36px;
+    line-height: 1.16;
+  }
+}
+
+.team__list {
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.team__card {
+  display: block;
+
+  background-color: var(--bg-color-main);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
+
+  @media screen and (max-width: 767px) {
+    &:not(:last-child) {
+      margin-bottom: var(--main-margin);
+    }
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    display: block;
+
+    width: calc((100% - 1 * var(--main-margin)) / 2);
+
+    &:not(:nth-child(2n)) {
+      margin-right: var(--main-margin);
+    }
+
+    &:not(:nth-last-child(-n + 2)) {
+      margin-bottom: var(--main-margin);
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    display: block;
+
+    width: calc((100% - 3 * var(--main-margin)) / 4);
+
+    &:not(:last-child) {
+      margin-right: var(--main-margin);
+    }
+  }
+}
+
+.team__card-low {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.team__nickname {
+  min-width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+
+  font-size: 16px;
+  line-height: 1.19;
+  text-align: center;
+  letter-spacing: 0.03em;
+
+  font-weight: 500;
+  color: var(--title-font-color);
+}
+
+.team__position {
+  min-width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+
+  font-size: 16px;
+  line-height: 1.19;
+  text-align: center;
+  letter-spacing: 0.03em;
+}
+
+.team__list-social {
+  display: flex;
+  justify-content: center;
+  padding-left: 32px;
+  padding-right: 32px;
+  margin-top: 16px;
+}
+
+.team__link-social {
+  display: block;
+  margin-right: 10px;
+  padding: 12px;
+
+  background-color: var(--bg-color-main);
+  text-decoration: none;
+  border-radius: 50%;
+
+  transition-property: background-color;
+  @extend %transition;
+
+  &:hover {
+    background-color: var(--accent-color);
+    .team__icon-social {
+      fill: var(--accent-font-color);
+    }
+  }
+
+  &:focus {
+    background-color: var(--accent-color);
+    .team__icon-social {
+      fill: var(--accent-font-color);
+    }
+  }
+}
+
+.team__icon-social {
+  display: block;
+  width: 20px;
+  height: 20px;
+
+  fill: var(--noactive-icon-color);
+
+  transition-property: fill;
+  @extend %transition;
+}

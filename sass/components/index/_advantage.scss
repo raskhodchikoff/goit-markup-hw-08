@@ -1,0 +1,100 @@
+.advantage__list {
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.advantage__item {
+  &::before {
+    display: block;
+    margin-bottom: var(--main-margin);
+    content: '';
+    height: 120px;
+    background-color: var(--minor-bg-color);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  // Убираю маржин у последнего блока при медиа до 768
+
+  @media screen and (max-width: 767px) {
+    &:not(:last-child) {
+      margin-bottom: var(--main-margin);
+    }
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    display: block;
+
+    // flex-basis: calc((100% - кол-во маржинов в строке * значение маржина) / кол-во элементов в строке);
+
+    flex-basis: calc((100% - 1 * var(--main-margin)) / 2);
+
+    // Убираю правые маржины у каждого второго блока
+
+    &:not(:nth-child(2n)) {
+      margin-right: var(--main-margin);
+    }
+
+    // Убираю нижние маржины у нижних двух блоков
+
+    &:not(:nth-last-child(-n + 2)) {
+      margin-bottom: var(--main-margin);
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    display: block;
+
+    flex-basis: calc((100% - 3 * var(--main-margin)) / 4);
+
+    // Убираю правый маржин у крайне правого блока
+
+    &:not(:nth-child(4)) {
+      margin-right: var(--main-margin);
+    }
+  }
+}
+
+.advantage__icon-one {
+  &::before {
+    background-image: url(../images/bg-antenna.svg);
+  }
+}
+.advantage__icon-two {
+  &::before {
+    background-image: url(../images/bg-clock.svg);
+  }
+}
+.advantage__icon-three {
+  &::before {
+    background-image: url(../images/bg-diagram.svg);
+  }
+}
+.advantage__icon-four {
+  &::before {
+    background-image: url(../images/bg-astronaut.svg);
+  }
+}
+
+.advantage__title {
+  display: block;
+  margin-bottom: 10px;
+
+  text-align: center;
+  font-weight: bold;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--title-font-color);
+
+  @media screen and (min-width: 768px) {
+    text-align: left;
+  }
+}
+
+.advantage__text {
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+}

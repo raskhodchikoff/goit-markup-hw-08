@@ -1,0 +1,109 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  opacity: 1;
+
+  overflow-y: scroll;
+
+  background: rgba(0, 0, 0, 0.2);
+
+  transition-property: opacity;
+  @extend %transition;
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  /* Помогает при скрытом элементе пропустить через себя нажатие мышки */
+  pointer-events: none;
+}
+
+.modal {
+  position: absolute;
+  /* Позиционирование в центре */
+  top: 50%;
+  left: 50%;
+  /* transform: translate(-50%, -50%) scale(1); */
+  transform: translate(-50%, -50%) perspective(600px) rotateX(0deg);
+  opacity: 1;
+
+  width: 450px;
+  height: 609px;
+  z-index: 3;
+  background: var(--bg-color-main);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+
+  transition-property: transform, opacity;
+  @extend %transition;
+
+  @media screen and (min-width: 1200px) {
+    width: 528px;
+    height: 581px;
+  }
+}
+.modal__title {
+  padding-top: 40px;
+  margin-left: 40px;
+  width: 370px;
+
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.03em;
+
+  color: var(--title-font-color);
+
+  @media screen and (min-width: 1200px) {
+    width: 448px;
+  }
+}
+
+/* Модальное окно до его запуска, т.е. когда бэкдроп спрятан, то спрятана и модалка */
+
+.backdrop.is-hidden .modal {
+  /* transform: translate(-50%, -50%) scale(0.7); */
+  transform: translate(-50%, -50%) perspective(600px) rotateX(-45deg);
+  opacity: 0;
+}
+
+/* Кнопка закрытия модалього окна */
+
+.modal__btn-close {
+  position: absolute;
+  display: block;
+  top: 8px;
+  right: 8px;
+
+  width: 30px;
+  height: 30px;
+}
+
+.modal__icon-close {
+  position: absolute;
+  display: block;
+  top: 8px;
+  right: 8px;
+
+  width: 30px;
+  height: 30px;
+
+  fill: var(--title-font-color);
+
+  transition-property: fill;
+  @extend %transition;
+
+  &:hover {
+    cursor: pointer;
+    fill: var(--accent-color);
+  }
+  &:focus {
+    cursor: pointer;
+    fill: var(--accent-color);
+  }
+}

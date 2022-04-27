@@ -1,0 +1,55 @@
+/* Кнопки фильтра */
+
+.portfolio__list-btn {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+
+  li {
+    @media screen and (max-width: 767px) {
+      &:not(:nth-last-child(-n + 2)) {
+        margin-bottom: 15px;
+      }
+    }
+  }
+  @media screen and (min-width: 768px) {
+    justify-content: center;
+  }
+}
+
+.portfolio__btn {
+  border-radius: 4px;
+  border: none;
+  padding: 6px 22px;
+  margin-right: 8px;
+
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.62;
+  text-align: center;
+  letter-spacing: 0.03em;
+
+  background-color: var(--minor-bg-color);
+  color: var(--title-font-color);
+  box-shadow: 0;
+
+  transition-property: background-color, color, box-shadow;
+  @extend %transition;
+
+  &:hover {
+    background-color: var(--accent-color);
+    color: var(--accent-font-color);
+    cursor: pointer;
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+      0px 2px 2px rgba(0, 0, 0, 0.12);
+  }
+
+  &:focus {
+    background-color: var(--accent-color);
+    color: var(--accent-font-color);
+    cursor: pointer;
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+      0px 2px 2px rgba(0, 0, 0, 0.12);
+  }
+}

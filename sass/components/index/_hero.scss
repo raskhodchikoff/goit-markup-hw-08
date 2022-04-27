@@ -1,0 +1,87 @@
+.hero {
+  /* Настройка размещения заголовка и кнопки в секции */
+  padding-top: 118px;
+  padding-bottom: 118px;
+  /* Настройка фонового изображения */
+  height: 400px;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #c4c4c4;
+  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url(../images/hero.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  @media screen and (min-width: 768px) {
+    max-width: 768px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    padding-top: 200px;
+    padding-bottom: 200px;
+
+    height: 600px;
+    max-width: 1600px;
+  }
+}
+
+.hero__title {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: var(--main-margin);
+  width: 360px;
+
+  font-weight: 900;
+  font-size: 26px;
+  line-height: 1.62;
+  text-align: center;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent-font-color);
+
+  @media screen and (min-width: 1200px) {
+    width: 696px;
+
+    font-size: 44px;
+    line-height: 1.36;
+  }
+}
+
+.hero__btn {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  /* Размер кнопки задаем паддингами, а не шириной-высотой */
+  padding: 10px 32px;
+  /* минимальный размер ширины кнопки */
+  min-width: 200px;
+
+  border-radius: 4px;
+  border: none;
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1.87;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.06em;
+  background-color: var(--accent-color);
+  color: var(--accent-font-color);
+
+  transition-property: background-color, box-shadow;
+  @extend %transition;
+
+  &:hover {
+    background-color: var(--bg-color-active-btn);
+    cursor: pointer;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  }
+  &:focus {
+    background-color: var(--bg-color-active-btn);
+    cursor: pointer;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  }
+}

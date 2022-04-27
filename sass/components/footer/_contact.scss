@@ -1,0 +1,74 @@
+.footer__contact {
+  flex-basis: 232px;
+
+  @media screen and (max-width: 767px) {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    margin-left: 76px;
+    text-align: center;
+  }
+}
+
+/* Добавляю нижний отступ к e-mail и убираю нижний отступ у номера телефона */
+
+.footer__list-links {
+  li {
+    &:not(:last-child) {
+      margin-bottom: 8px;
+    }
+  }
+}
+
+.footer__address {
+  display: inline-block;
+  margin-bottom: 8px;
+
+  @media screen and (max-width: 767px) {
+    text-align: center;
+  }
+
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  color: var(--accent-font-color);
+
+  transition-property: color;
+  @extend %transition;
+
+  &:hover {
+    color: var(--accent-color);
+  }
+
+  &:focus {
+    color: var(--accent-color);
+  }
+}
+
+.footer__link {
+  display: inline-block;
+
+  @media screen and (max-width: 767px) {
+    text-align: center;
+  }
+
+  font-style: normal;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  color: rgba(255, 255, 255, 0.6);
+
+  transition-property: color;
+  @extend %transition;
+
+  &:hover {
+    color: var(--accent-color);
+  }
+
+  &:focus {
+    color: var(--accent-color);
+  }
+}

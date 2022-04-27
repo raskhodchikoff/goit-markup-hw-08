@@ -1,0 +1,24 @@
+/* основной цвет текста #757575 */
+/* вторичный цвет текста #212121 */
+/* цвет акцента #2196F3 */
+/* цвет основного фона и акцентного цвета шрифта #ffffff */
+/* цвет вторичного фона #F5F4FA */
+/* цвет футера #2F303A*/
+
+/* Переменные */
+
+:root {
+  --bg-color-main: #ffffff;
+  --accent-color: #2196f3;
+  --main-font-color: #757575;
+  --accent-font-color: #ffffff;
+  --title-font-color: #212121;
+  --minor-bg-color: #f5f4fa;
+  --logo-half-color: #000000;
+  --bg-color-active-btn: #188ce8;
+  --footer-color: #2f303a;
+  --noactive-icon-color: #afb1b8;
+  --main-margin: 30px;
+  --timing-duration: 250ms;
+  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}

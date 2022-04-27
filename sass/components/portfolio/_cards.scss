@@ -1,0 +1,150 @@
+/* Секция Работы */
+
+.portfolio__list-project {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.portfolio__card {
+  @media screen and (max-width: 767px) {
+    margin-left: auto;
+    margin-right: auto;
+
+    width: 450px;
+
+    &:not(:last-child) {
+      margin-bottom: var(--main-margin);
+    }
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    flex-basis: calc((100% - 1 * var(--main-margin)) / 2);
+
+    &:not(:nth-child(2n)) {
+      margin-right: var(--main-margin);
+    }
+
+    &:not(:last-child) {
+      margin-bottom: var(--main-margin);
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    /* Ширина карточки вычисляется как: 100% вычесть сумму ширин зазоров в пикселях (количество зазоров = количество карточек минус 1) между ними и делить на кол-во карточек*/
+
+    flex-basis: calc((100% - 2 * var(--card-margin)) / 3);
+
+    /* Ширина одного зазора справа */
+
+    margin-right: var(--main-margin);
+
+    /* Удаляю правый марджин у каждой третьей правой карточки */
+
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+
+    /* Добавляю отступ снизу всем, кроме последних трёх нижних карточек */
+
+    &:not(:nth-last-child(-n + 3)) {
+      margin-bottom: var(--main-margin);
+    }
+  }
+
+  box-shadow: 0;
+
+  transition-property: box-shadow;
+  @extend %transition;
+
+  a {
+    display: block;
+  }
+
+  &:hover {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    .portfolio__card-overlay {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  &:focus {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    .portfolio__card-overlay {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+.portfolio__card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 63px;
+  padding-bottom: 63px;
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+  background-color: #2196f3e5;
+  color: var(--accent-font-color);
+
+  opacity: 1;
+  transform: translateY(100%);
+  transition-property: opacity, transform;
+  @extend %transition;
+}
+
+.portfolio__card-wrap {
+  position: relative;
+
+  @media screen and (max-width: 767px) {
+    width: 450px;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    width: calc((100% - 1 * var(--card-margin)) / 2);
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: calc((100% - 2 * var(--card-margin)) / 3);
+  }
+
+  height: 294px;
+  overflow: hidden;
+}
+
+.portfolio__card-border {
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  border-left: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
+  border-right: 1px solid #eeeeee;
+}
+
+.portfolio__title {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 2;
+  letter-spacing: 0.06em;
+  color: var(--title-font-color);
+}
+
+.portfolio__subtitle {
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.03em;
+  color: var(--main-font-color);
+}
