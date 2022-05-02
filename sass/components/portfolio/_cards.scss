@@ -10,7 +10,7 @@
     margin-left: auto;
     margin-right: auto;
 
-    width: 450px;
+    max-width: 450px;
 
     &:not(:last-child) {
       margin-bottom: var(--main-margin);
@@ -50,8 +50,6 @@
       margin-bottom: var(--main-margin);
     }
   }
-
-  box-shadow: 0;
 
   transition-property: box-shadow;
   @extend %transition;
@@ -106,7 +104,7 @@
   position: relative;
 
   @media screen and (max-width: 767px) {
-    width: 450px;
+    max-width: 450px;
   }
 
   @media screen and (min-width: 768px) and (max-width: 1199px) {
@@ -117,7 +115,7 @@
     width: calc((100% - 2 * var(--card-margin)) / 3);
   }
 
-  height: 294px;
+  // height: 294px;
   overflow: hidden;
 }
 
@@ -132,9 +130,16 @@
   border-right: 1px solid #eeeeee;
 }
 
+.portfolio__card-border--double-string {
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    height: 147px;
+  }
+}
+
 .portfolio__title {
   display: block;
   margin-bottom: 4px;
+
   font-weight: bold;
   font-size: 18px;
   line-height: 2;

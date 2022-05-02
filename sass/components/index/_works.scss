@@ -18,6 +18,9 @@
 }
 .works__item {
   position: relative;
+
+  max-width: 370px;
+  height: auto;
 }
 .works__overlay {
   position: absolute;
@@ -27,7 +30,7 @@
   height: 70px;
   padding-top: 27px;
 
-  background: #2f303acc;
+  background: rgba(47, 48, 58, 0.8);
   font-style: normal;
   font-weight: 700;
   font-size: 14px;

@@ -5,6 +5,10 @@ body {
   color: var(--main-font-color);
 }
 
+body.modal-open {
+  overflow: hidden;
+}
+
 .container {
   /* центровка контента по середине и ширина контента */
   margin-left: auto;

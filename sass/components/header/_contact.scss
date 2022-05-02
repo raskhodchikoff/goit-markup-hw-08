@@ -10,8 +10,9 @@
 
   @media screen and (min-width: 1200px) {
     display: flex;
+    flex-grow: 1;
+    justify-content: flex-start;
     flex-direction: row-reverse;
-    justify-content: flex-end;
   }
 }
 
