@@ -423,6 +423,10 @@ body.modal-open {
   overflow: hidden;
 }
 
+body.is-open {
+  overflow: hidden;
+}
+
 .container {
   /* центровка контента по середине и ширина контента */
   margin-left: auto;
@@ -466,9 +470,6 @@ body.modal-open {
   /* Одинаковые верхние и нижние паддинги всех секций*/
   padding-top: 60px;
   padding-bottom: 60px;
-}
-.section:nth-child(3) {
-  display: none;
 }
 @media screen and (min-width: 1200px) {
   .section {
@@ -529,8 +530,12 @@ body.modal-open {
 
 /* лого */
 .header {
-  position: relative;
   border-bottom: 1px solid #ececec;
+}
+@media screen and (max-width: 767px) {
+  .header {
+    position: relative;
+  }
 }
 
 /* Флексбокс всего хедера */
@@ -558,7 +563,6 @@ body.modal-open {
   display: inline-flex;
   width: 40px;
   height: 40px;
-  margin-top: 10px;
   border: none;
   background-color: transparent;
   z-index: 4;
@@ -598,17 +602,29 @@ body.modal-open {
 @media screen and (max-width: 767px) {
   .header__container {
     display: none;
-    padding-top: 48px;
-    padding-left: 40px;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 796px;
+    height: 100%;
+    padding-top: 48px;
+    padding-left: 40px;
+    margin-top: auto;
+    margin-bottom: auto;
+    overflow-y: scroll;
     z-index: 3;
   }
   .header__container.is-open {
-    display: block;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
 }
 @media screen and (min-width: 768px) {
@@ -619,6 +635,24 @@ body.modal-open {
     -webkit-box-flex: 1;
         -ms-flex-positive: 1;
             flex-grow: 1;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .header__mobile-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
   }
 }
 
@@ -628,6 +662,7 @@ body.modal-open {
     display: -ms-flexbox;
     display: flex;
     margin-left: 88px;
+    margin-bottom: auto;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -721,7 +756,6 @@ body.modal-open {
     -webkit-box-direction: reverse;
         -ms-flex-direction: column-reverse;
             flex-direction: column-reverse;
-    margin-left: 82px;
     padding-top: 21px;
     padding-bottom: 21px;
   }
@@ -746,7 +780,6 @@ body.modal-open {
 
 @media screen and (max-width: 767px) {
   .contact__item:not(:last-child) {
-    margin-top: 302px;
     margin-bottom: 32px;
   }
 }
@@ -873,6 +906,12 @@ body.modal-open {
 
 .social__list {
   margin-top: 64px;
+  margin-bottom: 48px;
+}
+@media screen and (min-width: 768px) {
+  .social__list {
+    display: none;
+  }
 }
 
 .social__item {
@@ -888,11 +927,7 @@ body.modal-open {
 @media screen and (max-width: 404px) {
   .social__item:last-child {
     padding-left: 0;
-  }
-}
-@media screen and (min-width: 768px) {
-  .social__item {
-    display: none;
+    margin-top: 10px;
   }
 }
 
@@ -1438,6 +1473,12 @@ body.modal-open {
 }
 
 /* Чем мы занимаемся */
+@media screen and (max-width: 1199px) {
+  .works__section {
+    display: none;
+  }
+}
+
 .works__title {
   display: block;
   margin-bottom: 50px;
@@ -1489,7 +1530,7 @@ body.modal-open {
 
 .team__title {
   display: block;
-  margin-bottom: 50px;
+  margin-bottom: var(--main-margin);
   font-size: 28px;
   font-weight: bold;
   line-height: 1.18;
@@ -1501,6 +1542,7 @@ body.modal-open {
   .team__title {
     font-size: 36px;
     line-height: 1.16;
+    margin-bottom: 50px;
   }
 }
 
@@ -1622,7 +1664,7 @@ body.modal-open {
 
 .clients__title {
   display: block;
-  margin-bottom: 50px;
+  margin-bottom: var(--main-margin);
   font-size: 28px;
   font-weight: bold;
   line-height: 1.18;
@@ -1634,6 +1676,7 @@ body.modal-open {
   .clients__title {
     font-size: 36px;
     line-height: 1.16;
+    margin-bottom: 50px;
   }
 }
 

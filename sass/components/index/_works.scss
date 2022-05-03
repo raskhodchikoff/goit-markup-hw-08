@@ -1,5 +1,11 @@
 /* Чем мы занимаемся */
 
+.works__section {
+  @media screen and (max-width: 1199px) {
+    display: none;
+  }
+}
+
 .works__title {
   display: block;
   margin-bottom: 50px;

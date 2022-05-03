@@ -9,6 +9,10 @@ body.modal-open {
   overflow: hidden;
 }
 
+body.is-open {
+  overflow: hidden;
+}
+
 .container {
   /* центровка контента по середине и ширина контента */
   margin-left: auto;

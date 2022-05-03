@@ -3,10 +3,6 @@
   padding-top: 60px;
   padding-bottom: 60px;
 
-  &:nth-child(3) {
-    display: none;
-  }
-
   @media screen and (min-width: 1200px) {
     /* Одинаковые верхние и нижние паддинги всех секций*/
     padding-top: 94px;
